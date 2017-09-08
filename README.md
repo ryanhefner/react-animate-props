@@ -6,12 +6,14 @@ to animate prop values on change.
 ## Install
 
 Via [npm](https://npmjs.com/package/react-animate-props)
-```
+
+```sh
 npm install --save react-animate-props
 ```
 
 Via [Yarn](https://yarn.fyi/react-animate-props)
-```
+
+```sh
 yarn add react-animate-props
 ```
 
@@ -43,7 +45,7 @@ it is applied to the state. (Example: `(prop, value) => { return { [prop]: value
 
 ### Example
 
-```
+```js
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import animateProps from 'react-animate-props';
