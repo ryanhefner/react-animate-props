@@ -28,18 +28,20 @@ of an existing component, just export your component and pass it through, `anima
 ### Parameters
 
 * `component:Class` - Class to apply `animateProps` logic to.
+
 * `defaultProps:Object` - Default props declared for the component being animated. (Default: `{}`)
 
 ### Properties
 
 * `animatedProps:Object` - Object defining which props to animate, and the tween
-settings for each. `animateProps` uses the [GreenSock](https://github.com/greensock/GreenSock-JS)
-library, specifically a `TweenLite` instance, and you can pass whatever props that
-library supports via the tween settings, except for `onUpdate` and `onComplete`,
-which will be overridden by callbacks already defined within the component. You
-can find out more by reading the [TweenLite documentation](https://greensock.com/docs/TweenLite).
+settings for each. `animateProps` uses the [Tweenkle](https://github.com/ryanhefner/tweenkle)
+tweening library, specifically a `Tween` instance, and you can pass whatever props that
+library supports via the tween settings. You can find out more by reading the
+[Tweenkle README](https://github.com/ryanhefner/tweenkle).
+
 * `onAnimateProgress:Function` - Callback available to manipulate the `prop` before
 it is applied to the state. (Example: `(prop, value) => { return { [prop]: value }; }`)
+
 * `onAnimateComplete:Function` - Callback fired when the animation for a `prop` completes.
 (Example: `(prop, value, tweensActive) => {}`)
 
@@ -49,7 +51,7 @@ it is applied to the state. (Example: `(prop, value) => { return { [prop]: value
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import animateProps from 'react-animate-props';
-import TweenMax from 'gsap';
+import {Easing} from 'tweenkle';
 
 class AnimatedNumberLabel extends Component {
   render() {
@@ -74,9 +76,9 @@ AnimatedNumberLabel.propTypes = {
 AnimatedNumberLabel.defaultProps = {
   animatedProps: {
     number: {
-      ease: Power1.easeIn,
-      delay: 0.5,
-      duration: 1.5,
+      ease: Easing.Quad.In,
+      delay: 500,
+      duration: 1500,
     },
   },
   number: 0,
@@ -90,15 +92,9 @@ AnimatedNumberLabel.defaultProps = {
   },
 };
 
-export default animateProps(AnimatedNumberLabel, ['number'], (animatedProps) => {
-  const number = animatedProps.number;
-
-  return Object.assign({}, animatedProps, {
-    number: Math.round(number),
-  });
-});
+export default animateProps(AnimatedNumberLabel, AnimatedNumberLabel.defaultProps);
 ```
 
 ## License
 
-[MIT](LICENSE)
+[MIT](LICENSE) © [Ryan Hefner](https://www.ryanhefner.com)
