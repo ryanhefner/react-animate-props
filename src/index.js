@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import TweenMax from 'gsap';
-import omit from 'lodash.omit';
+import Tween from 'tweenkle';
+import { Easing } from 'tweenkle';
+import omit from 'lomit';
 
 const animateProps = (AnimatedComponent, defaultProps = {}) => {
   return class extends Component {
@@ -46,37 +47,41 @@ const animateProps = (AnimatedComponent, defaultProps = {}) => {
       const props = Object.assign({}, defaultProps, this.props);
       const vars = Object.assign({}, {
         duration: 1,
-        ease: Quad.easeOut,
+        ease: Easing.Quad.Out,
       }, tweenProps);
 
-      const tweenProp = {[prop]: value};
-      const tween = TweenLite.to(tweenProp, vars.duration, {
-        [prop]: target,
-        ...omit(vars, ['duration']),
-        onUpdate: () => {
-          if (props.onAnimateProgress) {
-            this.setState(props.onAnimateProgress(prop, tweenProp[prop]));
-            return;
-          }
-
-          this.setState({
-            [prop]: tweenProp[prop],
-          });
-        },
-        onComplete: () => {
-          if (props.onAnimateComplete) {
-            let tweensActive = false;
-
-            Object.keys(this.tweens).forEach((key) => {
-              if (this.tweens[key].isActive()) {
-                tweensActive = true;
-              }
-            });
-
-            props.onAnimateComplete(prop, tweenProp[prop], tweensActive);
-          }
-        },
+      const tween = new Tween({
+        ...vars,
+        start: value,
+        end: target,
       });
+
+      tween.on('tick', ({value}) => {
+        if (props.onAnimateProgress) {
+          this.setState(props.onAnimateProgress(prop, value));
+          return;
+        }
+
+        this.setState({
+          [prop]: value,
+        });
+      });
+
+      tween.on('complete', ({value}) => {
+        if (props.onAnimateComplete) {
+          let tweensActive = false;
+
+          Object.keys(this.tweens).forEach((key) => {
+            if (this.tweens[key].active) {
+              tweensActive = true;
+            }
+          });
+
+          props.onAnimateComplete(prop, value, tweensActive);
+        }
+      });
+
+      tween.start();
 
       return this.tweens[prop] = tween;
     }
@@ -84,21 +89,17 @@ const animateProps = (AnimatedComponent, defaultProps = {}) => {
     componentWillUnmount() {
       if (this.tweens && this.tweens.length) {
         Object.keys(this.tweens).forEach((key) => {
-          this.tweens[key].kill();
+          this.tweens[key].stop();
         });
       }
     }
 
     render() {
-      const {
-        children,
-      } = this.props;
-
       const props = Object.assign({}, defaultProps, this.props);
-      const animatedProps = props.animatedProps
+      const animatedPropsKeys = props.animatedProps
         ? Object.keys(props.animatedProps)
         : [];
-      const cleanProps = omit(this.props, animatedProps);
+      const cleanProps = omit(this.props, animatedPropsKeys);
 
       return (
         <AnimatedComponent {...cleanProps} {...this.state} />
