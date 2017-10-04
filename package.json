@@ -31,6 +31,7 @@
   },
   "dependencies": {
     "lomit": "^0.1.1",
+    "react-display-name": "^0.2.3",
     "tweenkle": "^0.1.1"
   },
   "devDependencies": {
