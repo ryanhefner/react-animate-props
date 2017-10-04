@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
-import Tween from 'tweenkle';
-import { Easing } from 'tweenkle';
+import getDisplayName from 'react-display-name';
 import omit from 'lomit';
+import Tween, { Easing } from 'tweenkle';
 
 const animateProps = (AnimatedComponent, defaultProps = {}) => {
-  return class extends Component {
+  class AnimateProps extends Component {
     constructor(props) {
       super(props);
 
@@ -106,6 +106,10 @@ const animateProps = (AnimatedComponent, defaultProps = {}) => {
       );
     }
   }
+
+  AnimateProps.displayName = `AnimateProps(${getDisplayName(AnimatedComponent)})`;
+
+  return AnimateProps;
 }
 
 export default animateProps;
