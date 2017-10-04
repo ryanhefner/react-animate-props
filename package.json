@@ -1,6 +1,6 @@
 {
   "name": "react-animate-props",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "license": "MIT",
   "description": "React higher order component method that transforms your favorite components to animate their props on change.",
   "repository": "ryanhefner/react-animate-props",
