@@ -14,6 +14,8 @@ const config = {
     globals: {
       'react': 'React',
     },
+    banner: `/*! ${pkg.name} v${pkg.version} | (c) ${new Date().getFullYear()} Ryan Hefner | ${pkg.license} License | https://github.com/${pkg.repository} !*/`,
+    footer: '/* follow me on Twitter! @ryanhefner */',
   },
   external: [
     'react',
@@ -28,8 +30,6 @@ const config = {
     }),
     json(),
   ],
-  banner: `/*! ${pkg.name} v${pkg.version} | (c) ${new Date().getFullYear()} Ryan Hefner | ${pkg.license} License | https://github.com/${pkg.repository} !*/`,
-  footer: '/* follow me on Twitter! @ryanhefner */',
 };
 
 if (process.env.NODE_ENV === 'production') {
