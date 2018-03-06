@@ -8,6 +8,7 @@
   "files": [
     "index.js",
     "es",
+    "src",
     "umd"
   ],
   "directories": {
@@ -32,37 +33,34 @@
   "dependencies": {
     "lomit": "^0.1.1",
     "react-display-name": "^0.2.3",
-    "tweenkle": "^0.1.1"
+    "tweenkle": "^0.1.6"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-plugin-dev-expression": "^0.2.1",
     "babel-plugin-external-helpers": "^6.22.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-plugin-transform-react-remove-prop-types": "^0.4.8",
-    "babel-preset-env": "^1.6.0",
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.13",
+    "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
-    "gzip-size": "^4.0.0",
-    "jest": "^21.0.2",
+    "gzip-size": "^4.1.0",
+    "jest": "^22.4.2",
     "pretty-bytes": "^4.0.2",
-    "react": "^15.6.1",
-    "rollup": "^0.49.3",
-    "rollup-plugin-babel": "^3.0.2",
-    "rollup-plugin-commonjs": "^8.2.1",
+    "react": "^16.2.0",
+    "rollup": "^0.56.4",
+    "rollup-plugin-babel": "^3.0.3",
+    "rollup-plugin-commonjs": "^9.0.0",
     "rollup-plugin-json": "^2.3.0",
-    "rollup-plugin-node-resolve": "^3.0.0",
-    "rollup-plugin-uglify": "^2.0.1",
+    "rollup-plugin-node-resolve": "^3.0.3",
+    "rollup-plugin-uglify": "^3.0.0",
     "rollup-watch": "^4.3.1"
-  },
-  "browserify": {
-    "transform": [
-      "loose-envify"
-    ]
   },
   "keywords": [
     "react",
     "higher-order-component",
     "animate",
-    "props"
+    "props",
+    "tween",
+    "tweenkle"
   ]
 }
