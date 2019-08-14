@@ -150,7 +150,10 @@ AnimatedNumberLabel.defaultProps = {
   },
 };
 
-export default animateProps(AnimatedNumberLabel, AnimatedNumberLabel.defaultProps);
+export default animateProps(
+  AnimatedNumberLabel,
+  AnimatedNumberLabel.defaultProps
+);
 ```
 
 ## License
