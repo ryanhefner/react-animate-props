@@ -4,8 +4,8 @@ React HOC (higher order component) method, and React Hook (__New!__) for transfo
 your favorite components to animate prop values on change.
 
 This package uses [Tweenkle](https://github.com/ryanhefner/tweenkle) for handling
-the tweening of prop values. It’s not as full-featured as GSAP, but it works for
-basic values and objects.
+the tweening of prop values. It’s not as full-featured as [GSAP](https://github.com/greensock/GreenSock-JS),
+but it works pretty well for basic value and object tweening.
 
 ## Install
 
@@ -35,14 +35,17 @@ your class-based, and functional, React components.
 * `prop : Number` - Value to animate
 * `options : Object` - Options to define the tween properties to use.
 
-> Default options:
-> {
->   delay: 0,                           // Delay to apply before the tween starts
->   duration: 1000,                     // Duration of the tween in milliseconds
->   ease: Easing.Quad.Out,              // Ease to use for the tween, @see [Tweenkle](https://github.com/ryanhefner/tweenkle) for options
->   onAnimateProgress: value => value,  // Callback to use during the tweening process, as well as being able to manipulate the value during the tween
->   onAnimateComplete: value => value,  // Callback for when the tween has completed, as well as being able to manipulate the final value of the tween
-> }
+__Default options:__
+
+```js
+{
+  delay: 0,                           // Delay to apply before the tween starts
+  duration: 1000,                     // Duration of the tween in milliseconds
+  ease: Easing.Quad.Out,              // Ease to use for the tween, @see [Tweenkle](https://github.com/ryanhefner/tweenkle) for options
+  onAnimateProgress: value => value,  // Callback to use during the tweening process, as well as being able to manipulate the value during the tween
+  onAnimateComplete: value => value,  // Callback for when the tween has completed, as well as being able to manipulate the final value of the tween
+}
+```
 
 #### Example
 
