@@ -9,6 +9,7 @@ const config = {
   input: 'src/index.js',
   output: {
     name: 'react-animate-props',
+    exports: 'named',
     format: 'umd',
     file: './index.js',
     globals: {
