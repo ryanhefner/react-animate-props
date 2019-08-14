@@ -2,13 +2,14 @@ import babel from 'rollup-plugin-babel';
 import commonjs from 'rollup-plugin-commonjs';
 import json from 'rollup-plugin-json';
 import resolve from 'rollup-plugin-node-resolve';
-import uglify from 'rollup-plugin-uglify';
+import { uglify } from 'rollup-plugin-uglify';
 import pkg from './package.json';
 
 const config = {
   input: 'src/index.js',
   output: {
     name: 'react-animate-props',
+    exports: 'named',
     format: 'umd',
     file: './index.js',
     globals: {
@@ -23,6 +24,7 @@ const config = {
   plugins: [
     babel({
       exclude: 'node_modules/**',
+      externalHelpers: process.env.BABEL_ENV === 'umd',
     }),
     resolve(),
     commonjs({
