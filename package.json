@@ -62,6 +62,8 @@
   "keywords": [
     "react",
     "higher-order-component",
+    "react-component",
+    "react-hook",
     "animate",
     "props",
     "tween",
