@@ -46,7 +46,7 @@
   "dependencies": {
     "lomit": "^0.1.1",
     "react-display-name": "^0.2.4",
-    "tweenkle": "^0.2.0"
+    "tweenkle": "^0.2.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.5.5",
