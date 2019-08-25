@@ -5,6 +5,16 @@
   "description": "React higher order component method that transforms your favorite components to animate their props on change.",
   "repository": "ryanhefner/react-animate-props",
   "author": "Ryan Hefner <hi@ryanhefner.com> (https://www.ryanhefner.com)",
+  "keywords": [
+    "react",
+    "higher-order-component",
+    "react-component",
+    "react-hook",
+    "animate",
+    "props",
+    "tween",
+    "tweenkle"
+  ],
   "files": [
     "index.js",
     "animateProps.js",
@@ -57,15 +67,5 @@
     "rollup-plugin-json": "^4.0.0",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-uglify": "^6.0.2"
-  },
-  "keywords": [
-    "react",
-    "higher-order-component",
-    "react-component",
-    "react-hook",
-    "animate",
-    "props",
-    "tween",
-    "tweenkle"
-  ]
+  }
 }
