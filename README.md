@@ -1,6 +1,6 @@
 # react-animate-props
 
-React HOC (higher order component) method, and React Hook (__New!__) for transforming
+React HOC (higher order component) method, and React Hook for transforming
 your favorite components to animate prop values on change.
 
 This package uses [Tweenkle](https://github.com/ryanhefner/tweenkle) for handling
