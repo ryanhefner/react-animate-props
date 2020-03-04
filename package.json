@@ -45,27 +45,27 @@
   },
   "dependencies": {
     "lomit": "^0.1.1",
-    "react-display-name": "^0.2.4",
-    "tweenkle": "^0.2.1"
+    "react-display-name": "^0.2.5",
+    "tweenkle": "^0.2.2"
   },
   "devDependencies": {
-    "@babel/cli": "^7.5.5",
-    "@babel/core": "^7.5.5",
-    "@babel/plugin-proposal-object-rest-spread": "^7.5.5",
-    "@babel/preset-env": "^7.5.5",
-    "@babel/preset-react": "^7.0.0",
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.6",
+    "@babel/plugin-proposal-object-rest-spread": "^7.8.3",
+    "@babel/preset-env": "^7.8.6",
+    "@babel/preset-react": "^7.8.3",
     "babel-plugin-dev-expression": "^0.2.2",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
     "gzip-size": "^5.1.1",
-    "jest": "^24.9.0",
+    "jest": "^25.1.0",
     "pretty-bytes": "^5.3.0",
-    "react": "^16.9.0",
-    "rollup": "^1.20.2",
+    "react": "^16.13.0",
+    "rollup": "^1.32.0",
     "rollup-plugin-babel": "^4.3.3",
-    "rollup-plugin-commonjs": "^10.0.2",
+    "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-json": "^4.0.0",
     "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-uglify": "^6.0.2"
+    "rollup-plugin-uglify": "^6.0.4"
   }
 }
