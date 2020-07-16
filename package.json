@@ -5,6 +5,14 @@
   "description": "React higher order component method that transforms your favorite components to animate their props on change.",
   "repository": "ryanhefner/react-animate-props",
   "author": "Ryan Hefner <hi@ryanhefner.com> (https://www.ryanhefner.com)",
+  "bugs": {
+    "url": "https://github.com/ryanhefner/react-animate-props/issues"
+  },
+  "homepage": "https://github.com/ryanhefner/react-animate-props#readme",
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/ryanhefner"
+  },
   "keywords": [
     "react",
     "higher-order-component",
